@@ -161,7 +161,7 @@ void * get_func_addr(char * func)
 	}
 
 	addr = dlsym(handle, func);
-	error = dlerror();
+	error = (char*) dlerror();
 	if (error != NULL) {
 		fprintf(stderr, "%s\n", error);
 		exit(EXIT_FAILURE);
